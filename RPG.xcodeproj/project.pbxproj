@@ -27,6 +27,7 @@
 		34C509052381BC4C008FC58F /* RPG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RPG; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C509082381BC4C008FC58F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34C509102381BCCC008FC58F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		34C509122389D1F9008FC58F /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		34C509072381BC4C008FC58F /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				34C509122389D1F9008FC58F /* assets */,
 				34C509082381BC4C008FC58F /* main.cpp */,
 			);
 			path = RPG;
