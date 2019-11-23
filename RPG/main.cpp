@@ -81,11 +81,10 @@ bool loadMedia(){
     //success flag
     bool success = true;
     //Load splash image
-    char* path = ".//assets//tiles_bmp//grass.bmp";
-    gTile = SDL_LoadBMP(path);
+    gTile = SDL_LoadBMP(".//assets//tiles_bmp//grass.bmp");
     
     if (gTile==NULL){
-        printf("Unable to load image %s! SDL Error: %s\n", path,SDL_GetError());
+        printf("Unable to load image %s! SDL Error: %s\n", ".//assets//tiles_bmp//grass.bmp", SDL_GetError());
         success = false;
     }
     return success;
