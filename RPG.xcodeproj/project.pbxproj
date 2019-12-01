@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34C509092381BC4C008FC58F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C509082381BC4C008FC58F /* main.cpp */; };
 		34C509112381BCCC008FC58F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C509102381BCCC008FC58F /* SDL2.framework */; };
+		34C509152392A7F0008FC58F /* mapreader.c in Sources */ = {isa = PBXBuildFile; fileRef = 34C509142392A7F0008FC58F /* mapreader.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		34C509082381BC4C008FC58F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34C509102381BCCC008FC58F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		34C509122389D1F9008FC58F /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		34C509142392A7F0008FC58F /* mapreader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mapreader.c; sourceTree = "<group>"; };
+		34C509162392ACCD008FC58F /* mapreader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mapreader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			children = (
 				34C509122389D1F9008FC58F /* assets */,
 				34C509082381BC4C008FC58F /* main.cpp */,
+				34C509142392A7F0008FC58F /* mapreader.c */,
+				34C509162392ACCD008FC58F /* mapreader.h */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C509092381BC4C008FC58F /* main.cpp in Sources */,
+				34C509152392A7F0008FC58F /* mapreader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

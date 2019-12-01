@@ -23,8 +23,8 @@ SDL_Surface* gScreenSurface = NULL;
 SDL_Surface* gTile;
 
 // Screnn Dimension Constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 1280;
+const int SCREEN_HEIGHT = 1024;
 
 int main(int argc, char * argv[]) {
     // insert code here...
@@ -62,6 +62,8 @@ bool init(){
     }
     else {
         gWindow = SDL_CreateWindow("Rex Pictorum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        SDL_SetWindowTitle(gWindow, "Rex Pictorum");
+        
     }
     
     //Intitalize the Window
@@ -85,7 +87,7 @@ bool loadMedia(){
     gTile = SDL_LoadBMP(path);
     
     if (gTile==NULL){
-        printf("Unable to load image %s! SDL Error: %s\n", path,SDL_GetError());
+        printf("Unable to load image %s! SDL Error: %s\n", path, SDL_GetError());
         success = false;
     }
     return success;
