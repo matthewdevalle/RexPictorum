@@ -13,21 +13,10 @@
 #include <stdlib.h>
 #include <SDL2/SDL.h>
 
-using namespace std;
 
 #define NUM_TILES 5
 
-// Functions
-//char LoadBackground(char[]);
-//void DrawBackground(char[ROWS][COLUMNS]);
-
-// Globals
-char asset_path[] = "/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/";
-char bmpName[] = "";
-
-
 // The surfaces contained in the window
-//SDL_Surface* gScreenSurface = NULL;
 SDL_Surface* gTile;
 SDL_Surface* tileList[5];
 
@@ -62,8 +51,8 @@ void LoadBackground(char pathname[], char screenMap[ROWS][COLUMNS]) {
     int ch;
     fptr = fopen(pathname,"r");
     
-    for (row=0;row<=ROWS;row++){
-        for(column=0;column<=COLUMNS;column++){
+    for (row=0;row<ROWS;row++){
+        for(column=0;column<COLUMNS;column++){
             ch = fgetc(fptr);
             if ((ch!=EOF)){
                 printf("%c",ch);
