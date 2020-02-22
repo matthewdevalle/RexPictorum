@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		34C509092381BC4C008FC58F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C509082381BC4C008FC58F /* main.cpp */; };
-		34C509112381BCCC008FC58F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C509102381BCCC008FC58F /* SDL2.framework */; };
-		34C509152392A7F0008FC58F /* mapreader.c in Sources */ = {isa = PBXBuildFile; fileRef = 34C509142392A7F0008FC58F /* mapreader.c */; };
+		850F6F2A23F0617100782C0C /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850F6F2923F0617100782C0C /* SDL2_image.framework */; };
+		85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85A6D53C23E64CB300D84F67 /* MapReader.cpp */; };
+		85F823EE23C22BD4008215EA /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F823ED23C22BD4008215EA /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +30,10 @@
 		34C509082381BC4C008FC58F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34C509102381BCCC008FC58F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		34C509122389D1F9008FC58F /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
-		34C509142392A7F0008FC58F /* mapreader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mapreader.c; sourceTree = "<group>"; };
-		34C509162392ACCD008FC58F /* mapreader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mapreader.h; sourceTree = "<group>"; };
+		850F6F2923F0617100782C0C /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		85A6D53C23E64CB300D84F67 /* MapReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MapReader.cpp; sourceTree = "<group>"; };
+		85A6D53D23E64CB300D84F67 /* MapReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MapReader.hpp; sourceTree = "<group>"; };
+		85F823ED23C22BD4008215EA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C509112381BCCC008FC58F /* SDL2.framework in Frameworks */,
+				85F823EE23C22BD4008215EA /* SDL2.framework in Frameworks */,
+				850F6F2A23F0617100782C0C /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,8 +71,8 @@
 			children = (
 				34C509122389D1F9008FC58F /* assets */,
 				34C509082381BC4C008FC58F /* main.cpp */,
-				34C509142392A7F0008FC58F /* mapreader.c */,
-				34C509162392ACCD008FC58F /* mapreader.h */,
+				85A6D53C23E64CB300D84F67 /* MapReader.cpp */,
+				85A6D53D23E64CB300D84F67 /* MapReader.hpp */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -76,6 +80,8 @@
 		34C5090F2381BCCC008FC58F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				850F6F2923F0617100782C0C /* SDL2_image.framework */,
+				85F823ED23C22BD4008215EA /* SDL2.framework */,
 				34C509102381BCCC008FC58F /* SDL2.framework */,
 			);
 			name = Frameworks;
@@ -121,6 +127,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 34C508FC2381BC4C008FC58F;
@@ -138,8 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */,
 				34C509092381BC4C008FC58F /* main.cpp in Sources */,
-				34C509152392A7F0008FC58F /* mapreader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +246,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Frameworks",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -250,6 +258,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Frameworks",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -274,6 +283,7 @@
 				34C5090E2381BC4C008FC58F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
