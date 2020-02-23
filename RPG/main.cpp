@@ -20,8 +20,6 @@
 const int SCREEN_WIDTH = 1264;
 const int SCREEN_HEIGHT = 640;
 
-
-
 //prototypes;
 bool init(void);
 bool loadMedia(void);
@@ -34,13 +32,18 @@ SDL_Window* gWindow = NULL;
 SDL_Surface* gScreenSurface = NULL;
 SDL_Surface* gxTile;
 
+// other SDL stuff
+SDL_Event event;
+
 // Screen Dimension Constants
 char pathName[] = "/Users/macd/Projects/RexPictorum/RPG/assets/maps/start.txt";
 char screenMap[ROWS][COLUMNS];
 
+
 int main(int argc, char * argv[]) {
     // insert code here...
-
+    bool quit = false;
+    
     
     if(!init()){
         printf("Failed to Intialise!\n");
@@ -52,16 +55,20 @@ int main(int argc, char * argv[]) {
         DrawBackground(gScreenSurface,screenMap);
         // Update the Window Surface
         SDL_UpdateWindowSurface(gWindow);
-        SDL_Delay(2000);
-    }
-    // go through the event queue once
-    SDL_Event event;
-    while(SDL_PollEvent(&event)) {
-        // do nothing
     }
     
-    if (getchar()){
-        close();
+    // this our main game loop including the event queue
+    while(!quit){
+        //Handle events on queue
+        while( SDL_PollEvent(&event) != 0 ){
+            //User requests quit
+            if( event.type == SDL_QUIT ){
+                quit = true;
+            }
+            if(quit){
+                close();
+            }
+        }
     }
     return 0;
 }
