@@ -29,8 +29,12 @@ struct player_character{
     char symbol; // the ascii character that will represent this player in the game
 };
 
+MapReader::MapReader(){
+}
+MapReader::~MapReader(){
+}
 
-void LoadTiles(void){
+void MapReader::LoadTiles(void){
     char asset_path[5][65] = {
                             {"/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/grass.bmp"},
                             {"/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/path.bmp"},
@@ -44,7 +48,7 @@ void LoadTiles(void){
     }
 }
 
-void LoadBackground(char pathname[], char screenMap[ROWS][COLUMNS]) {
+void MapReader::LoadBackground(char pathname[], char screenMap[ROWS][COLUMNS]) {
     FILE *fptr;
     int row = 0;
     int column = 0;
@@ -62,7 +66,7 @@ void LoadBackground(char pathname[], char screenMap[ROWS][COLUMNS]) {
     }
 }
 
-bool LoadMedia(SDL_Surface *tile, char tileName[]){
+bool MapReader::LoadMedia(SDL_Surface *tile, char tileName[]){
     //success flag
     bool success = true;
     // pathname for assets
@@ -96,12 +100,12 @@ void DrawBackground(SDL_Surface* screenSurface, char screenMap[ROWS][COLUMNS]) {
     rect.x = 0;
     rect.y = 0;
     
-    LoadTiles();
+    MapReader::LoadTiles();
     
     for (row=0;row<ROWS;row++){
         for(column=0;column<COLUMNS;column++){
             ch = screenMap[row][column];
-            tileName = getTileName(ch);
+            tileName = MapReader::getTileName(ch);
             success = SDL_BlitSurface(tileName, NULL, screenSurface, &rect);
             rect.x += 16;
         }

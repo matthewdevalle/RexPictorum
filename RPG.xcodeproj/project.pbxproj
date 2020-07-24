@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		34C509092381BC4C008FC58F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C509082381BC4C008FC58F /* main.cpp */; };
 		850F6F2A23F0617100782C0C /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850F6F2923F0617100782C0C /* SDL2_image.framework */; };
+		85A469E2245E3E7C008C3C27 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85A469E0245E3E7C008C3C27 /* InputHandler.cpp */; };
 		85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85A6D53C23E64CB300D84F67 /* MapReader.cpp */; };
+		85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9B624CB73CE00C080EA /* Game.cpp */; };
 		85F823EE23C22BD4008215EA /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F823ED23C22BD4008215EA /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +33,12 @@
 		34C509102381BCCC008FC58F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		34C509122389D1F9008FC58F /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		850F6F2923F0617100782C0C /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		85A469E0245E3E7C008C3C27 /* InputHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputHandler.cpp; sourceTree = "<group>"; };
+		85A469E1245E3E7C008C3C27 /* InputHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputHandler.hpp; sourceTree = "<group>"; };
 		85A6D53C23E64CB300D84F67 /* MapReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MapReader.cpp; sourceTree = "<group>"; };
 		85A6D53D23E64CB300D84F67 /* MapReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MapReader.hpp; sourceTree = "<group>"; };
+		85BAC9B624CB73CE00C080EA /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		85BAC9B724CB73CE00C080EA /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		85F823ED23C22BD4008215EA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,8 +77,12 @@
 			children = (
 				34C509122389D1F9008FC58F /* assets */,
 				34C509082381BC4C008FC58F /* main.cpp */,
+				85BAC9B624CB73CE00C080EA /* Game.cpp */,
+				85BAC9B724CB73CE00C080EA /* Game.hpp */,
 				85A6D53C23E64CB300D84F67 /* MapReader.cpp */,
 				85A6D53D23E64CB300D84F67 /* MapReader.hpp */,
+				85A469E0245E3E7C008C3C27 /* InputHandler.cpp */,
+				85A469E1245E3E7C008C3C27 /* InputHandler.hpp */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -146,7 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */,
+				85A469E2245E3E7C008C3C27 /* InputHandler.cpp in Sources */,
 				34C509092381BC4C008FC58F /* main.cpp in Sources */,
+				85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,21 @@
 // defines
 #define ROWS 40
 #define COLUMNS 80
+class MapReader{
+public:
+    
+// Public Functions
+    MapReader();
+    ~MapReader();
+    
+    void LoadBackground(char[], char[ROWS][COLUMNS]);
+    static void LoadTiles(void);
+    bool LoadMedia(SDL_Surface*, char tileName[]);
+    void DrawBackground(SDL_Surface*,char[ROWS][COLUMNS]);
+    static SDL_Surface* getTileName(char tileIdent);
 
-// Functions
-void LoadBackground(char[], char[ROWS][COLUMNS]);
-bool LoadMedia(SDL_Surface*);
-void DrawBackground(SDL_Surface*,char[ROWS][COLUMNS]);
-SDL_Surface* getTileName(char tileIdent);
-
+private:
+    //nothing in here yet
+    
+};
 #endif /* MapReader_hpp */

@@ -14,6 +14,7 @@
 #include <string>
 #include <fstream>
 #include "MapReader.hpp"
+#include "Game.hpp"
 
 
 //Screen dimension constants
@@ -38,38 +39,36 @@ SDL_Event event;
 // Screen Dimension Constants
 char pathName[] = "/Users/macd/Projects/RexPictorum/RPG/assets/maps/start.txt";
 char screenMap[ROWS][COLUMNS];
-
+Game* game = nullptr;
 
 int main(int argc, char * argv[]) {
     // insert code here...
-    bool quit = false;
+    game = new Game();
+    game->init("RexPictorum", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, false);
     
+    while(game->running()){
+        game->handleEvents();
+        game->update();
+        game->render();
+    }
+    
+    game->clean();
+    
+    // stuff here
+    MapReader* mr = new MapReader();
     
     if(!init()){
         printf("Failed to Intialise!\n");
     }
     else{
         // read in the text file
-        LoadBackground(pathName, screenMap);
+        mr->LoadBackground(pathName, screenMap);
         // Create the Background
-        DrawBackground(gScreenSurface,screenMap);
+        mr->DrawBackground(gScreenSurface,screenMap);
         // Update the Window Surface
         SDL_UpdateWindowSurface(gWindow);
     }
     
-    // this our main game loop including the event queue
-    while(!quit){
-        //Handle events on queue
-        while( SDL_PollEvent(&event) != 0 ){
-            //User requests quit
-            if( event.type == SDL_QUIT ){
-                quit = true;
-            }
-            if(quit){
-                close();
-            }
-        }
-    }
     return 0;
 }
 
@@ -82,7 +81,7 @@ bool init(){
         success = false;
     }
     else {
-        gWindow = SDL_CreateWindow("Rex Pictorum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        gWindow = SDL_CreateWindow("Rex Pictorum", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
         SDL_SetWindowTitle(gWindow, "Rex Pictorum");
         
     }
