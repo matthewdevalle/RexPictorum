@@ -7,6 +7,18 @@
 //
 
 #include "Game.hpp"
+#include "TextureManager.hpp"
+#include "GameObject.hpp"
+
+SDL_Texture* playerTex;
+SDL_Rect srcR, destR;
+
+GameObject* player;
+
+// ctor
+Game::Game(){}
+// dtor
+Game::~Game(){}
 
 void Game::handleEvents(){
     SDL_Event event;
@@ -37,20 +49,23 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer){
             std::cout << "Renderer created..." << std::endl;
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         }
         isRunning = true;
     } else{
         isRunning = false;
     }
+    
+    player = new GameObject("/Users/macd/Projects/RexPictorum/RPG/assets/player.bmp", renderer, 0, 0);
 }
 
 void Game::update(){
-    cnt++;
-    std::cout << cnt << std::endl;
+    player->Update();
 }
 
 void Game::render(){
     SDL_RenderClear(renderer);
+    player->Render();
     SDL_RenderPresent(renderer);
 }
 

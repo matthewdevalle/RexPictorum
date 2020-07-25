@@ -85,7 +85,7 @@ bool MapReader::LoadMedia(SDL_Surface *tile, char tileName[]){
     return success;
 }
 
-void DrawBackground(SDL_Surface* screenSurface, char screenMap[ROWS][COLUMNS]) {
+void MapReader::DrawBackground(SDL_Surface* screenSurface, char screenMap[ROWS][COLUMNS]) {
     int row=0;
     int column=0;
     int ch;
@@ -116,7 +116,7 @@ void DrawBackground(SDL_Surface* screenSurface, char screenMap[ROWS][COLUMNS]) {
     printf("\n total columns = %i \n", column);
 }
 
-SDL_Surface*  getTileName(char tileIdent)
+SDL_Surface* MapReader::getTileName(char tileIdent)
 {
     SDL_Surface *tileName;
     //tileName = (char *)"";

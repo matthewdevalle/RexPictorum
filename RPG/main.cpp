@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <SDL2/SDL.h>
-// #include <SDL_image/SDL2_image.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
@@ -42,18 +41,37 @@ char screenMap[ROWS][COLUMNS];
 Game* game = nullptr;
 
 int main(int argc, char * argv[]) {
-    // insert code here...
+    const int FPS = 60;
+    const int frameDelay = 1000/FPS;
+    
+    Uint32 frameStart;
+    int frameTime;
+    
     game = new Game();
     game->init("RexPictorum", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, false);
     
     while(game->running()){
+        //Get current time
+        frameStart = SDL_GetTicks();
+        
+        // Run game loop
         game->handleEvents();
+        std::cout << "Handled events..." << std::endl;
         game->update();
+        std::cout << "Updating game objects..." << std::endl;
         game->render();
+        std::cout << "Rendering screen..." << std::endl;
+        
+        // Calculate time for one pass through the game loop
+        frameTime = SDL_GetTicks() - frameStart;
+        
+        if (frameDelay > frameTime){
+            SDL_Delay(frameDelay - frameTime);
+        }
     }
     
     game->clean();
-    
+ /*
     // stuff here
     MapReader* mr = new MapReader();
     
@@ -68,7 +86,7 @@ int main(int argc, char * argv[]) {
         // Update the Window Surface
         SDL_UpdateWindowSurface(gWindow);
     }
-    
+*/
     return 0;
 }
 

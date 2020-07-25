@@ -12,6 +12,8 @@
 		85A469E2245E3E7C008C3C27 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85A469E0245E3E7C008C3C27 /* InputHandler.cpp */; };
 		85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85A6D53C23E64CB300D84F67 /* MapReader.cpp */; };
 		85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9B624CB73CE00C080EA /* Game.cpp */; };
+		85BAC9BB24CC947400C080EA /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9B924CC947400C080EA /* TextureManager.cpp */; };
+		85BAC9BE24CC9AA200C080EA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9BC24CC9AA200C080EA /* GameObject.cpp */; };
 		85F823EE23C22BD4008215EA /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F823ED23C22BD4008215EA /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,10 @@
 		85A6D53D23E64CB300D84F67 /* MapReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MapReader.hpp; sourceTree = "<group>"; };
 		85BAC9B624CB73CE00C080EA /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		85BAC9B724CB73CE00C080EA /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		85BAC9B924CC947400C080EA /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
+		85BAC9BA24CC947400C080EA /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
+		85BAC9BC24CC9AA200C080EA /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		85BAC9BD24CC9AA200C080EA /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		85F823ED23C22BD4008215EA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +89,10 @@
 				85A6D53D23E64CB300D84F67 /* MapReader.hpp */,
 				85A469E0245E3E7C008C3C27 /* InputHandler.cpp */,
 				85A469E1245E3E7C008C3C27 /* InputHandler.hpp */,
+				85BAC9B924CC947400C080EA /* TextureManager.cpp */,
+				85BAC9BA24CC947400C080EA /* TextureManager.hpp */,
+				85BAC9BC24CC9AA200C080EA /* GameObject.cpp */,
+				85BAC9BD24CC9AA200C080EA /* GameObject.hpp */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -157,8 +167,10 @@
 			files = (
 				85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */,
 				85A469E2245E3E7C008C3C27 /* InputHandler.cpp in Sources */,
+				85BAC9BE24CC9AA200C080EA /* GameObject.cpp in Sources */,
 				34C509092381BC4C008FC58F /* main.cpp in Sources */,
 				85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */,
+				85BAC9BB24CC947400C080EA /* TextureManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
