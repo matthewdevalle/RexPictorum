@@ -14,6 +14,7 @@
 		85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9B624CB73CE00C080EA /* Game.cpp */; };
 		85BAC9BB24CC947400C080EA /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9B924CC947400C080EA /* TextureManager.cpp */; };
 		85BAC9BE24CC9AA200C080EA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9BC24CC9AA200C080EA /* GameObject.cpp */; };
+		85BAC9C124CCC21300C080EA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9BF24CCC21300C080EA /* Map.cpp */; };
 		85F823EE23C22BD4008215EA /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F823ED23C22BD4008215EA /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		85BAC9BA24CC947400C080EA /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
 		85BAC9BC24CC9AA200C080EA /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
 		85BAC9BD24CC9AA200C080EA /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		85BAC9BF24CCC21300C080EA /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		85BAC9C024CCC21300C080EA /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
 		85F823ED23C22BD4008215EA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +96,8 @@
 				85BAC9BA24CC947400C080EA /* TextureManager.hpp */,
 				85BAC9BC24CC9AA200C080EA /* GameObject.cpp */,
 				85BAC9BD24CC9AA200C080EA /* GameObject.hpp */,
+				85BAC9BF24CCC21300C080EA /* Map.cpp */,
+				85BAC9C024CCC21300C080EA /* Map.hpp */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				85BAC9BE24CC9AA200C080EA /* GameObject.cpp in Sources */,
 				34C509092381BC4C008FC58F /* main.cpp in Sources */,
 				85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */,
+				85BAC9C124CCC21300C080EA /* Map.cpp in Sources */,
 				85BAC9BB24CC947400C080EA /* TextureManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,11 +9,15 @@
 #include "Game.hpp"
 #include "TextureManager.hpp"
 #include "GameObject.hpp"
+#include "Map.hpp"
 
 SDL_Texture* playerTex;
 SDL_Rect srcR, destR;
 
 GameObject* player;
+Map* map;
+
+SDL_Renderer* Game::renderer = nullptr;
 
 // ctor
 Game::Game(){}
@@ -56,7 +60,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     
-    player = new GameObject("/Users/macd/Projects/RexPictorum/RPG/assets/player.bmp", renderer, 0, 0);
+    player = new GameObject("/Users/macd/Projects/RexPictorum/RPG/assets/player.bmp", 0, 0);
+    map = new Map();
 }
 
 void Game::update(){
@@ -65,6 +70,7 @@ void Game::update(){
 
 void Game::render(){
     SDL_RenderClear(renderer);
+    map->DrawMap();
     player->Render();
     SDL_RenderPresent(renderer);
 }
