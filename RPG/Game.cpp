@@ -10,12 +10,17 @@
 #include "TextureManager.hpp"
 #include "GameObject.hpp"
 #include "Map.hpp"
+#include "ECS.hpp"
+#include "Components.hpp"
 
 SDL_Texture* playerTex;
 SDL_Rect srcR, destR;
 
 GameObject* player;
 Map* map;
+
+Manager manager;
+auto& newPlayer(manager.addEntity());
 
 SDL_Renderer* Game::renderer = nullptr;
 
@@ -60,12 +65,18 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     
-    player = new GameObject("/Users/macd/Projects/RexPictorum/RPG/assets/player.bmp", 0, 0);
+    player = new GameObject("/Users/macd/Projects/RexPictorum/RPG/assets/player.png", 0, 0);
     map = new Map();
+    
+    newPlayer.addComponent<PositionComponent>();
+    newPlayer.getComponent<PositionComponent>().setPos(500,500);
+    
 }
 
 void Game::update(){
     player->Update();
+    manager.update();
+    std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;
 }
 
 void Game::render(){

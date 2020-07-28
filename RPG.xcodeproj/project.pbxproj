@@ -15,6 +15,8 @@
 		85BAC9BB24CC947400C080EA /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9B924CC947400C080EA /* TextureManager.cpp */; };
 		85BAC9BE24CC9AA200C080EA /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9BC24CC9AA200C080EA /* GameObject.cpp */; };
 		85BAC9C124CCC21300C080EA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9BF24CCC21300C080EA /* Map.cpp */; };
+		85BAC9C424CDC9A700C080EA /* ECS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9C224CDC9A700C080EA /* ECS.cpp */; };
+		85BAC9C724CDE0CC00C080EA /* Components.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BAC9C524CDE0CC00C080EA /* Components.cpp */; };
 		85F823EE23C22BD4008215EA /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F823ED23C22BD4008215EA /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,10 @@
 		85BAC9BD24CC9AA200C080EA /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		85BAC9BF24CCC21300C080EA /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		85BAC9C024CCC21300C080EA /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
+		85BAC9C224CDC9A700C080EA /* ECS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ECS.cpp; sourceTree = "<group>"; };
+		85BAC9C324CDC9A700C080EA /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
+		85BAC9C524CDE0CC00C080EA /* Components.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Components.cpp; sourceTree = "<group>"; };
+		85BAC9C624CDE0CC00C080EA /* Components.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Components.hpp; sourceTree = "<group>"; };
 		85F823ED23C22BD4008215EA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +104,10 @@
 				85BAC9BD24CC9AA200C080EA /* GameObject.hpp */,
 				85BAC9BF24CCC21300C080EA /* Map.cpp */,
 				85BAC9C024CCC21300C080EA /* Map.hpp */,
+				85BAC9C224CDC9A700C080EA /* ECS.cpp */,
+				85BAC9C324CDC9A700C080EA /* ECS.hpp */,
+				85BAC9C524CDE0CC00C080EA /* Components.cpp */,
+				85BAC9C624CDE0CC00C080EA /* Components.hpp */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -171,8 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A6D53E23E64CB300D84F67 /* MapReader.cpp in Sources */,
+				85BAC9C724CDE0CC00C080EA /* Components.cpp in Sources */,
 				85A469E2245E3E7C008C3C27 /* InputHandler.cpp in Sources */,
 				85BAC9BE24CC9AA200C080EA /* GameObject.cpp in Sources */,
+				85BAC9C424CDC9A700C080EA /* ECS.cpp in Sources */,
 				34C509092381BC4C008FC58F /* main.cpp in Sources */,
 				85BAC9B824CB73CE00C080EA /* Game.cpp in Sources */,
 				85BAC9C124CCC21300C080EA /* Map.cpp in Sources */,
