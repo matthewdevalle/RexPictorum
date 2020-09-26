@@ -7,6 +7,4 @@
 //
 
 #include "InputHandler.hpp"
-enum {
-    
-};
+

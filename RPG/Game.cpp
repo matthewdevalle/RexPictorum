@@ -8,22 +8,21 @@
 
 #include "Game.hpp"
 #include "TextureManager.hpp"
-#include "GameObject.hpp"
 #include "Map.hpp"
-#include "ECS.hpp"
-#include "Components.hpp"
+#include "ECS/Components.hpp"
+#include "Vector2D.h"
+//#include "ECS/PositionComponent.hpp"
 
 SDL_Texture* playerTex;
 SDL_Rect srcR, destR;
 
-GameObject* player;
 Map* map;
 
 Manager manager;
-auto& newPlayer(manager.addEntity());
 
 SDL_Renderer* Game::renderer = nullptr;
 
+auto& player(manager.addEntity());
 // ctor
 Game::Game(){}
 // dtor
@@ -65,24 +64,30 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         isRunning = false;
     }
     
-    player = new GameObject("/Users/macd/Projects/RexPictorum/RPG/assets/player.png", 0, 0);
     map = new Map();
     
-    newPlayer.addComponent<PositionComponent>();
-    newPlayer.getComponent<PositionComponent>().setPos(500,500);
+    player.addComponent<TransformComponent>();
+    player.addComponent<SpriteComponent>("/Users/macd/Projects/RexPictorum/RPG/assets/player.png");
+    
     
 }
 
 void Game::update(){
-    player->Update();
+    manager.refresh();
     manager.update();
-    std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << newPlayer.getComponent<PositionComponent>().y() << std::endl;
+    
+    player.getComponent<TransformComponent>().position.Add(Vector2D(5,0));
+    
+    if (player.getComponent<TransformComponent>().position.x > 100 ){
+      player.getComponent<SpriteComponent>().SetTex("/Users/macd/Projects/RexPictorum/RPG/assets/player.png");
+    }
+        
 }
 
 void Game::render(){
     SDL_RenderClear(renderer);
     map->DrawMap();
-    player->Render();
+    manager.draw();
     SDL_RenderPresent(renderer);
 }
 
