@@ -12,13 +12,15 @@
 #include <stdio.h>
 #include "Game.hpp"
 
+#define ROWS 40
+#define COLUMNS 80
 
 class Map {
 public:
     Map();
     ~Map();
     
-    void LoadMap(int arr[20][25]);
+    void LoadMap();
     void DrawMap();
     
 private:
@@ -30,7 +32,7 @@ private:
     SDL_Texture* water;
     SDL_Texture* tree;
     
-    int map[20][25];
+    int map[ROWS][COLUMNS];
 };
 
 #endif /* Map_hpp */

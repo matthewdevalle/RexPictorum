@@ -20,15 +20,6 @@
 SDL_Surface* gTile;
 SDL_Surface* tileList[5];
 
-struct player_character{
-    int operation_points;
-    int move_distance;
-    int current_xloc; // max 79
-    int current_yloc; // max 39
-    int damage;
-    char symbol; // the ascii character that will represent this player in the game
-};
-
 MapReader::MapReader(){
 }
 MapReader::~MapReader(){

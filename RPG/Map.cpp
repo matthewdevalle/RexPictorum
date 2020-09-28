@@ -31,13 +31,15 @@ int lvl1[20][25] = { {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                      {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
                     };
 
+char pathName[] = "/Users/macd/Projects/RexPictorum/RPG/assets/maps/start.txt";
+
 Map::Map(){
     dirt = TextureManager::LoadTexture("/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/path.bmp");
     grass = TextureManager::LoadTexture("/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/grass.bmp");
     water = TextureManager::LoadTexture("/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/water.bmp");
     tree = TextureManager::LoadTexture("/Users/macd/Projects/RexPictorum/RPG/assets/tiles_bmp/tree.bmp");
     
-    LoadMap(lvl1);
+    LoadMap();
     src.x = 0;
     src.y = 0;
     src.h = 16;
@@ -50,35 +52,53 @@ Map::Map(){
 }
 Map::~Map(){}
 
-void Map::LoadMap(int arr[20][25]){
+void Map::LoadMap(){
+    
+    FILE *fptr;
+    int row = 0;
+    int column = 0;
+    int ch;
+    fptr = fopen(pathName,"r");
+    
+    for (row=0; row<ROWS; row++){
+        for(column=0; column<COLUMNS; column++){
+            ch = fgetc(fptr);
+            if ((ch!=EOF)){
+                printf("%c", ch);
+                map[row][column] = (char)ch;
+            }
+        }
+    }
+ /*
     for (int row = 0; row <20; row++){
         for(int column = 0; column <25; column++){
             map[row][column] = arr[row][column];
         }
     }
+*/
 }
 
 void Map::DrawMap(){
     int type = 0;
     
-    for (int row = 0; row <20; row++){
-        for(int column = 0; column <25; column++){
+    for (int row = 0; row < ROWS; row++){
+        for(int column = 0; column < COLUMNS; column++){
             type = map[row][column];
             
             dest.x = column * 16;
             dest.y = row * 16;
             
             switch(type){
-                case 0:
+                case 'w':
                     TextureManager::Draw(water, src, dest);
                     break;
-                case 1:
+                case 'g':
                     TextureManager::Draw(grass, src, dest);
                     break;
-                case 2:
+                case 'r':
                     TextureManager::Draw(dirt, src, dest);
                     break;
-                case 3:
+                case 't':
                     TextureManager::Draw(tree, src, dest);
                     break;
                 default:

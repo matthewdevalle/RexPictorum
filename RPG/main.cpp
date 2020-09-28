@@ -36,8 +36,8 @@ SDL_Surface* gxTile;
 SDL_Event event;
 
 // Screen Dimension Constants
-char pathName[] = "/Users/macd/Projects/RexPictorum/RPG/assets/maps/start.txt";
-char screenMap[ROWS][COLUMNS];
+//char pathName[] = "/Users/macd/Projects/RexPictorum/RPG/assets/maps/start.txt";
+//char screenMap[ROWS][COLUMNS];
 Game* game = nullptr;
 
 int main(int argc, char * argv[]) {
@@ -86,7 +86,7 @@ int main(int argc, char * argv[]) {
         // Update the Window Surface
         SDL_UpdateWindowSurface(gWindow);
     }
-*/
+ */
     return 0;
 }
 

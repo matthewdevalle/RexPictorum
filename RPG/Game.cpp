@@ -9,6 +9,7 @@
 #include "Game.hpp"
 #include "TextureManager.hpp"
 #include "Map.hpp"
+#include "MapReader.hpp"
 #include "ECS/Components.hpp"
 #include "Vector2D.h"
 //#include "ECS/PositionComponent.hpp"
