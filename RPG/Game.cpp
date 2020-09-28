@@ -15,7 +15,7 @@
 
 SDL_Texture* playerTex;
 SDL_Rect srcR, destR;
-
+SDL_Event Game::event;
 Map* map;
 
 Manager manager;
@@ -29,7 +29,7 @@ Game::Game(){}
 Game::~Game(){}
 
 void Game::handleEvents(){
-    SDL_Event event;
+    
     SDL_PollEvent(&event);
     
     switch(event.type) {
@@ -68,20 +68,13 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     
     player.addComponent<TransformComponent>();
     player.addComponent<SpriteComponent>("/Users/macd/Projects/RexPictorum/RPG/assets/player.png");
-    
+    player.addComponent<KeyboardController>();
     
 }
 
 void Game::update(){
     manager.refresh();
     manager.update();
-    
-    player.getComponent<TransformComponent>().position.Add(Vector2D(5,0));
-    
-    if (player.getComponent<TransformComponent>().position.x > 100 ){
-      player.getComponent<SpriteComponent>().SetTex("/Users/macd/Projects/RexPictorum/RPG/assets/player.png");
-    }
-        
 }
 
 void Game::render(){

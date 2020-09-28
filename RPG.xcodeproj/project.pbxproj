@@ -39,6 +39,7 @@
 		850F6F2923F0617100782C0C /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		857AAEEB251FB4B70037FCE2 /* Vector2D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector2D.h; sourceTree = "<group>"; };
 		857AAEEC251FB7DD0037FCE2 /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
+		858C29F3252214FE0044FB43 /* KeyboardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardController.h; sourceTree = "<group>"; };
 		85A469E0245E3E7C008C3C27 /* InputHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputHandler.cpp; sourceTree = "<group>"; };
 		85A469E1245E3E7C008C3C27 /* InputHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputHandler.hpp; sourceTree = "<group>"; };
 		85A6D53C23E64CB300D84F67 /* MapReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MapReader.cpp; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 				85BAC9C624CDE0CC00C080EA /* Components.hpp */,
 				85BAC9CB24D5905B00C080EA /* TransformComponent.hpp */,
 				85BAC9CE24D5907500C080EA /* SpriteComponent.hpp */,
+				858C29F3252214FE0044FB43 /* KeyboardController.h */,
 			);
 			path = ECS;
 			sourceTree = "<group>";
