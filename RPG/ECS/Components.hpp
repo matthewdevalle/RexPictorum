@@ -14,6 +14,7 @@
 #include "TransformComponent.hpp"
 #include "SpriteComponent.hpp"
 #include "KeyboardController.h"
+#include "ColliderComponent.h"
 
 
 #endif /* Components_hpp */

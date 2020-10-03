@@ -50,7 +50,12 @@ Map::Map(){
     dest.h = 16;
     dest.w = 16;
 }
-Map::~Map(){}
+Map::~Map(){
+    SDL_DestroyTexture(dirt);
+    SDL_DestroyTexture(grass);
+    SDL_DestroyTexture(water);
+    SDL_DestroyTexture(tree);
+}
 
 void Map::LoadMap(){
     

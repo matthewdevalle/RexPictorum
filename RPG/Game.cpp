@@ -12,6 +12,7 @@
 #include "MapReader.hpp"
 #include "ECS/Components.hpp"
 #include "Vector2D.h"
+#include "Collision.h"
 //#include "ECS/PositionComponent.hpp"
 
 SDL_Texture* playerTex;
@@ -24,6 +25,8 @@ Manager manager;
 SDL_Renderer* Game::renderer = nullptr;
 
 auto& player(manager.addEntity());
+auto& wall(manager.addEntity());
+
 // ctor
 Game::Game(){}
 // dtor
@@ -67,15 +70,23 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     
     map = new Map();
     
-    player.addComponent<TransformComponent>();
+    player.addComponent<TransformComponent>(2);
     player.addComponent<SpriteComponent>("/Users/macd/Projects/RexPictorum/RPG/assets/player.png");
     player.addComponent<KeyboardController>();
+    player.addComponent<ColliderComponent>("player");
+    
+    wall.addComponent<TransformComponent>(100.0f, 100.0f, 32, 32, 2);
+    wall.addComponent<SpriteComponent>("/Users/macd/Projects/RexPictorum/RPG/assets/tiles_png/wall.png");
+    wall.addComponent<ColliderComponent>("wall");
     
 }
 
 void Game::update(){
     manager.refresh();
     manager.update();
+    if(Collision::AABB(player.getComponent<ColliderComponent>().collider, wall.getComponent<ColliderComponent>().collider)){
+        std::cout << "Wall Hit!" << std::endl;
+    }
 }
 
 void Game::render(){
